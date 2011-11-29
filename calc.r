@@ -64,25 +64,26 @@ calc-form: layout [
   sum-field:     field 166 "0" right bold
   btn "C" red     [ calc/clear ]
   across
-    btn "/" brown [ calc/operator 'devide ]
-    btn "7"       [ calc/num 7 ]
-    btn "8"       [ calc/num 8 ]
-    btn "9"       [ calc/num 9 ]
+    btn "/" #"/" brown [ calc/operator 'devide ]
+    btn "7" #"7"       [ calc/num 7 ]
+    btn "8" #"8"       [ calc/num 8 ]
+    btn "9" #"9"       [ calc/num 9 ]
   below across
-    btn "*" brown [ calc/operator 'multiply ]
-    btn "4"       [ calc/num 4 ]
-    btn "5"       [ calc/num 5 ]
-    btn "6"       [ calc/num 6 ]
+    btn "*" #"*" brown [ calc/operator 'multiply ]
+    btn "4" #"4"       [ calc/num 4 ]
+    btn "5" #"5"       [ calc/num 5 ]
+    btn "6" #"6"       [ calc/num 6 ]
   below across
-    btn "-" brown [ calc/operator 'subtract ]
-    btn "1"       [ calc/num 1 ]
-    btn "2"       [ calc/num 2 ]
-    btn "3"       [ calc/num 3 ]
+    btn "-" #"-" brown [ calc/operator 'subtract ]
+    btn "1" #"1"       [ calc/num 1 ]
+    btn "2" #"2"       [ calc/num 2 ]
+    btn "3" #"3"       [ calc/num 3 ]
   below across
-    btn "+" brown [ calc/operator 'add ]
-    btn "0"       [ calc/num 0 ]
-    btn ","       [ calc/comma ]
-    btn "=" red   [ calc/equal ]
+    btn "+" #"+" brown [ calc/operator 'add ]
+    btn "0" #"0"       [ calc/num 0 ]
+    btn "," [#"," #"."][ calc/comma ]
+    btn "=" [#"0" #"^m"] red   [ calc/equal ]
+  key keycode [#"^(ESC)"] [ quit ]
 ]
 
 calc-form: make calc-form [
@@ -94,4 +95,4 @@ calc-form: make calc-form [
   ]
 ]
 
-view calc-form
+view center-face calc-form
